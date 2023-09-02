@@ -1,0 +1,75 @@
+@keyframes menuOpen {
+    from {
+        margin-left: -70px;
+    }
+    to {
+        margin-left: 0;
+    }
+}
+
+@keyframes menuClose {
+    from {
+        margin-left: 0;
+    }
+    to {
+        margin-left: -70px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #91d1ff;
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+    position: absolute;
+}
+
+.logoVestEstudo {
+    height: 100%;
+    margin-left: 20px;
+}
+
+header h1{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+}
+
+main{
+    height: calc(100% - 80px);
+    width: 100%;
+    padding-top: 80px;
+    display: flex;
+}
+
+#menu {
+    width: 100px;
+    margin-left: -70px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    transition: all ease 1s;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+svg{
+    width: 30px;
+    font-size: 2em;
+}

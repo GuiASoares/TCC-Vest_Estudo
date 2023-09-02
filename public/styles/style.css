@@ -1,0 +1,257 @@
+@keyframes duvFreqAnimation {
+    from {
+        height: 0;
+        padding: 0;
+        font-size: 0em;
+    }
+    to {
+        height: 20%;
+        padding: 10px;
+        font-size: 1.8em;
+    }
+}
+
+@keyframes duvFreqAnimation-reverse {
+    from {
+        height: 20%;
+        padding: 10px;
+        font-size: 1.8em;
+    }
+    to {
+        height: 0;
+        padding: 0;
+        font-size: 0em;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    background-color: #91d1ff;
+}
+
+header {
+    height: 100px;
+    width: 100%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+main{
+    width: 100%;
+}
+
+header div {
+    height: 100%;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + main {
+    padding-top: 102px;
+}
+  
+
+.logoVestEstudo {
+    height: 100%;
+    margin-left: 20px;
+}
+
+#btnsEntradaUsuario {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#btnsEntradaUsuario input {
+    height: 50%;
+    width: 120px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    transition: all ease 0.5s;
+}
+
+#btnsEntradaUsuario input:hover {
+    cursor: pointer;
+    filter: brightness(0.70);
+}
+
+#sliderContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#leftArrow {
+    cursor: pointer;
+    font-size: 3em;
+    height: 50px;
+}
+svg {
+    padding: 8px;
+    border-radius: 10px;
+    transition: all ease 0.3s;
+}
+svg:hover{
+    background-color: rgb(0, 0, 0, 0.3);
+}
+
+#rightArrow {
+    cursor: pointer;
+    font-size: 3em;
+    height: 50px;
+    padding: 20px;
+}
+
+.slider {
+    display: flex;
+    height: 50vh;
+    width: 80%;
+    margin: 25px;
+    margin-top: 40px;
+    position: relative;
+    justify-content: center;
+}
+
+.slider li {
+    list-style: none;
+    position: absolute;
+    height: 100%;
+}
+
+.slider img {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+
+}
+
+.slider input {
+    display: none;
+    border-radius: 50%;
+}
+
+.slider label {
+    background-color: #000;
+    border: 1px solid #000;
+    bottom: 10px;
+    cursor: pointer;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+.slider li:nth-child(1) label {
+    left: 10px;
+}
+
+.slider li:nth-child(2) label {
+    left: 40px;
+}
+
+.slider li:nth-child(3) label {
+    left: 70px;
+}
+
+.slider img {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.slider li input:checked ~ img {
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transition: all ease 2s;
+}
+
+.slider li input:checked ~ label{
+    background-color: #f0f0f0;
+}
+
+section{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+section h1{
+    height: 10vh;
+    width: 75%;
+    font-size: 2.5em;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+section article {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+section article h2{
+    height: 8vh;
+    width: 100%;
+    background-color: #e2e2e2;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+section article p {
+    width: 80%;
+    height: 0;
+    color: #000;
+    background-color: #e2e2e2;
+    font-size: 0em;
+    text-align: center;
+    transition: all ease 2s;
+    border-radius: 0px 0px 10px 10px;
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    width: 100%;
+    background-color: #69BFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}

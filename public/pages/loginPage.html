@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="../imgs/logoVestEstudo.png">
+    <link rel="stylesheet" href="../styles/loginStyle.css">
+    <title>Entrada de Usuário</title>
+</head>
+
+<body>
+    <main>
+        <img src="../imgs/logoVestEstudo.png" alt="logoVestEstudo">
+        <section id="container">
+            <h1>Entrar com sua Conta</h1>
+            <div>
+                <label for="loginRb" id="lblLogin" style="background-color: #c0c0c0;">Login</label>
+                <input type="radio" name="loginRb" id="loginRb" checked>
+                <label for="cadastrarRb" id="lblCadastrar">Cadastrar-se</label>
+                <input type="radio" name="loginRb" id="cadastrarRb">
+            </div>
+            <form action="mainPage.html">
+                <input type="text" name="email" id="" placeholder="Digite seu E-mail">
+                <input type="password" name="password" id="" placeholder="Digite sua Senha">
+                <input type="submit" value="Entrar" id="btnEntrar">
+                <a href="">Esqueci a senha</a>
+            </form>
+        </section>
+    </main>
+    <script src="../scripts/loginScript.js"></script>
+</body>
+
+</html>
