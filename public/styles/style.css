@@ -38,6 +38,8 @@ header {
     height: 100px;
     width: 100%;
     background-color: #f0f0f0;
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,17 +54,6 @@ main{
 header div {
     height: 100%;
 }
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky + main {
-    padding-top: 102px;
-}
-  
 
 .logoVestEstudo {
     height: 100%;
