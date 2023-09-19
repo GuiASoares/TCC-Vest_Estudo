@@ -22,8 +22,8 @@
                     <input type="submit" name="cadastrar" value="Cadastrar-se" style="background-color: #e0e0e0;">
                 </form>
                 <form action="mainPage.html" class="formDados">
-                    <input type="email" name="email" id="" placeholder="Digite seu E-mail">
-                    <input type="password" name="password" id="" placeholder="Digite sua Senha">
+                    <input type="email" name="email" id="" placeholder="Digite seu e-mail">
+                    <input type="password" name="password" id="" placeholder="Digite sua senha">
                     <a href="">Esqueci a senha</a>
                     <input type="submit" value="Entrar" id="btnEntrar">
                 </form>
@@ -36,10 +36,10 @@
                     <input type="submit" name="cadastrar" value="Cadastrar-se" style="background-color: #c0c0c0;">
                 </form>
                 <form action="mainPage.html" class="formDados">
-                    <input type="text" name="nome" id="" placeholder="Digite seu Nome Completo">
-                    <input type="email" name="email" id="" placeholder="Digite seu E-mail">
-                    <input type="password" name="password" id="" placeholder="Digite sua Senha">
-                    <input type="password" name="passwordConfirm" id="" placeholder="Confirme sua Senha">
+                    <input type="text" name="nome" id="" placeholder="Digite seu nome completo">
+                    <input type="email" name="email" id="" placeholder="Digite seu e-mail">
+                    <input type="password" name="password" id="" placeholder="Digite sua senha">
+                    <input type="password" name="passwordConfirm" id="" placeholder="Confirme sua senha">
                     <input type="submit" value="Cadastrar-se" id="btnEntrar">
                 </form>
             <?php } ?>
