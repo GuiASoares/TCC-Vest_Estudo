@@ -38,6 +38,8 @@ header {
     height: 100px;
     width: 100%;
     background-color: #f0f0f0;
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -52,17 +54,6 @@ main{
 header div {
     height: 100%;
 }
-
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-.sticky + main {
-    padding-top: 102px;
-}
-  
 
 .logoVestEstudo {
     height: 100%;
@@ -120,7 +111,7 @@ svg:hover{
 
 .slider {
     display: flex;
-    height: 50vh;
+    height: 60vh;
     width: 80%;
     margin: 25px;
     margin-top: 40px;
@@ -139,6 +130,8 @@ svg:hover{
     height: 100%;
     width: 100%;
     vertical-align: top;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(171, 203, 218, 0.7);
 
 }
 
@@ -150,7 +143,7 @@ svg:hover{
 .slider label {
     background-color: #000;
     border: 1px solid #000;
-    bottom: 10px;
+    bottom: 5px;
     cursor: pointer;
     display: block;
     height: 10px;
@@ -158,6 +151,7 @@ svg:hover{
     width: 10px;
     z-index: 10;
     border-radius: 50%;
+    opacity: 0.75;
 }
 
 .slider li:nth-child(1) label {

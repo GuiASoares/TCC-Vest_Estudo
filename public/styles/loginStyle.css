@@ -36,54 +36,49 @@ img {
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
-div {
+.formOption {
     background-color: #e0e0e0;
     display: flex;
     gap: 20px;
     border-radius: 10px;
-    text-align: center;
     align-items: center;
 }
 
-div label {
+.formOption input {
+    border: none;
     padding: 10px;
     border-radius: 10px;
-    transition: all ease 0.5s;
 }
 
-div label:hover {
+.formOption input {
     cursor: pointer;
 }
 
-div input {
-    display: none;
-}
-
-form {
+.formDados {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-form input{
+.formDados input{
     border: 1.5px solid #000;
     border-radius: 10px;
     padding: 5px;
     transition: all ease 0.5s;
 }
 
-form input:hover {
+.formDados input:hover {
     filter: brightness(0.70);
 }
 
-form a {
+.formDados a {
     width: max-content;
     text-decoration: none;
     color: rgba(255, 0, 0, 0.5);
     transition: all ease 0.5s;
 }
 
-form a:hover {
+.formDados a:hover {
     text-decoration: underline;
     filter: brightness(0.65);
 }

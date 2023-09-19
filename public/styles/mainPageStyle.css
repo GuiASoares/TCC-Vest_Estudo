@@ -1,18 +1,18 @@
 @keyframes menuOpen {
     from {
-        margin-left: -70px;
+        width: 1.5%;
     }
     to {
-        margin-left: 0;
+        width: 10%;
     }
 }
 
 @keyframes menuClose {
     from {
-        margin-left: 0;
+        width: 10%;
     }
     to {
-        margin-left: -70px;
+        width: 1.5%;
     }
 }
 
@@ -32,6 +32,7 @@ header {
     background-color: #f0f0f0;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.5);
     position: absolute;
 }
@@ -47,6 +48,10 @@ header h1{
     position: absolute;
 }
 
+header svg {
+    margin-right: 20px;
+}
+
 main{
     height: calc(100% - 80px);
     width: 100%;
@@ -55,21 +60,72 @@ main{
 }
 
 #menu {
-    width: 100px;
-    margin-left: -70px;
+    width: 1.5%;
     background-color: #f0f0f0;
     padding: 10px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
     gap: 10px;
-    transition: all ease 1s;
-    animation-duration: 0.4s;
+    transition: all ease 0.5s;
+    animation-duration: 0.2s;
     animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
 
-svg{
-    width: 30px;
-    font-size: 2em;
+@media (max-width: 2000px) {
+    svg{
+        width: 30px;
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 1440px) {
+    svg{
+        width: 20px;
+        font-size: 1.6em;
+    }
+}
+
+@media (max-width: 770px) {
+    svg{
+        width: 15px;
+        font-size: 1.1em;
+    }
+}
+
+#menuOpen {
+    cursor: pointer;
+}
+
+#menuClose {
+    display: none;
+    cursor: pointer;
+}
+
+#menuInteract {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+ a {
+     color: #000;
+     font-size: 1.2em;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+.menuItems :hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
+}
+
+.itemsText {
+    display: none;
 }
