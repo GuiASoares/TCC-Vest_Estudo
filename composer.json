@@ -1,0 +1,8 @@
+{
+    "name": "tcc/site",
+    "autoload": {
+        "psr-4": {
+            "Src\\":"src/"
+        }
+    }
+}
