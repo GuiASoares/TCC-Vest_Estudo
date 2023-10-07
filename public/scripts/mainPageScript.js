@@ -1,4 +1,5 @@
 const menu = document.getElementById("menu");
+const userMenu = document.getElementById("userMenu");
 const menuOpen = document.getElementById("menuOpen");
 const menuClose = document.getElementById("menuClose");
 const itemsText = document.getElementsByClassName("itemsText");
@@ -16,5 +17,13 @@ function menuClicked() {
         menuOpen.style.display = "none";
         menuClose.style.display = "block";
         menu.style.animationName = "menuOpen";
+    }
+}
+
+function userMenuClicked() {
+    if (userMenu.style.display == "none"){
+        userMenu.style.display = "block";
+    } else {
+        userMenu.style.display = "none";
     }
 }

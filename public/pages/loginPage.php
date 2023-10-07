@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    if(isset($_SESSION['nome'])){
+        header('Location: index.php');
+    }
+    $erro = $_GET['erro'] ?? '';
+    $mensagemErro = '';
+    $erro == 'entradasErro' ? $mensagemErro = 'Insira todos os dados acima!' : '';
+    $erro == 'senhasDiferentes' ? $mensagemErro = 'As senhas inseridas devem ser iguais!' : '';
+    $erro == 'emailExistente' ? $mensagemErro = 'E-mail inserido já cadastrado!' : '';
+    $erro == 'emailInvalido' ? $mensagemErro = 'Insira um e-mail existente!' : '';
+    $erro == 'naoEncontrado' ? $mensagemErro = 'Usuário e/ou senha inválido(s)!' : '';
+    $erro == 'sessaoInvalidada' ? $mensagemErro = 'Faça seu login para prosseguir!' : '';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -15,31 +30,33 @@
         <img src="../imgs/logoVestEstudo.png" alt="logoVestEstudo">
         <section id="container">
             <?php
-                if (isset($_POST["login"])) { ?>
-                <h1>Entrar com sua Conta</h1>
-                <form class="formOption" method="post">
-                    <input type="submit" name="login" value="Login" style="background-color: #c0c0c0;">
-                    <input type="submit" name="cadastrar" value="Cadastrar-se" style="background-color: #e0e0e0;">
+                if (isset($_GET['opcao']) && $_GET['opcao'] == 'Login') { ?>
+                <h1>Entrar com sua Conta <?php echo getenv('DB_HOST');?></h1>
+                <form class="formOption" method="get">
+                    <input type="submit" name="opcao" value="Login" style="background-color: #c0c0c0;">
+                    <input type="submit" name="opcao" value="Cadastrar-se" style="background-color: #e0e0e0;">
                 </form>
-                <form action="mainPage.html" class="formDados">
+                <form action="../controllers/checagemLogin.php" method="post" class="formDados">
                     <input type="email" name="email" id="" placeholder="Digite seu e-mail">
-                    <input type="password" name="password" id="" placeholder="Digite sua senha">
+                    <input type="password" name="senha" id="" placeholder="Digite sua senha">
                     <a href="">Esqueci a senha</a>
+                    <p><?=$mensagemErro?></p>
                     <input type="submit" value="Entrar" id="btnEntrar">
                 </form>
             <?php } ?>
             <?php
-            if (isset($_POST["cadastrar"])) { ?>
+            if ((isset($_GET['opcao']) && $_GET['opcao'] == 'Cadastrar-se')) { ?>
                 <h1>Crie sua Conta</h1>
-                <form class="formOption" method="post">
-                    <input type="submit" name="login" value="Login" style="background-color: #e0e0e0;">
-                    <input type="submit" name="cadastrar" value="Cadastrar-se" style="background-color: #c0c0c0;">
+                <form class="formOption" method="get">
+                    <input type="submit" name="opcao" value="Login" style="background-color: #e0e0e0;">
+                    <input type="submit" name="opcao" value="Cadastrar-se" style="background-color: #c0c0c0;">
                 </form>
-                <form action="mainPage.html" class="formDados">
+                <form action="../controllers/checagemCadastro.php" method="post" class="formDados">
                     <input type="text" name="nome" id="" placeholder="Digite seu nome completo">
                     <input type="email" name="email" id="" placeholder="Digite seu e-mail">
-                    <input type="password" name="password" id="" placeholder="Digite sua senha">
-                    <input type="password" name="passwordConfirm" id="" placeholder="Confirme sua senha">
+                    <input type="password" name="senha" id="" placeholder="Digite sua senha">
+                    <input type="password" name="senhaConfirma" id="" placeholder="Confirme sua senha">
+                    <p><?=$mensagemErro?></p>
                     <input type="submit" value="Cadastrar-se" id="btnEntrar">
                 </form>
             <?php } ?>

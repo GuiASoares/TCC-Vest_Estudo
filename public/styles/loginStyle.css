@@ -73,6 +73,10 @@ img {
     filter: brightness(0.70);
 }
 
+.formDados p {
+    color: rgba(255, 0, 0, 1);
+}
+
 .formDados a {
     width: max-content;
     text-decoration: none;
