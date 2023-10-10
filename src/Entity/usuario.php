@@ -4,6 +4,9 @@
 use Exception;
 use Src\DB\Database;
 
+use function PHPSTORM_META\elementType;
+use function PHPSTORM_META\type;
+
     class Usuario {
 
         public $nome;
@@ -24,10 +27,12 @@ use Src\DB\Database;
 
         public function cadastrar(){
             $this->data = date('Y-m-d I:m:s');
+            $options = ['cost' => 12];
+            $this->senha = password_hash($this->senha, PASSWORD_BCRYPT, $options);
 
             $obDatabase = new Database('usuarios');
 
-            $emailExists = $obDatabase->select('email = "'.$this->email.'"', fields: 'email')->fetchColumn();
+            $emailExists = $obDatabase->select('email = "'.$this->email.'"', '','','email')->fetchColumn();
 
             if(!$emailExists){
                 $obDatabase->insert([
@@ -44,8 +49,8 @@ use Src\DB\Database;
 
         public function logar(){
             $obDatabase = new Database('usuarios');
-            $emailCadastrado = $obDatabase->select('email="'.$this->email. '"', fields: 'nome, email, senha, curso')->fetchObject();
-            if(isset($emailCadastrado->email, $emailCadastrado->senha) && $this->email == $emailCadastrado->email && $this->senha == $emailCadastrado->senha){
+            $emailCadastrado = $obDatabase->select('email="'.$this->email. '"','','', 'nome, email, senha, curso')->fetchObject();
+            if(isset($emailCadastrado->email, $emailCadastrado->senha) && $this->email == $emailCadastrado->email && password_verify($this->senha, $emailCadastrado->senha)){
                 $this->nome = $emailCadastrado->nome;
                 $this->curso = $emailCadastrado->curso;
                 return true;

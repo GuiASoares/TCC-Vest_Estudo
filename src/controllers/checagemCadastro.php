@@ -10,15 +10,19 @@
     $senha = $_POST['senha'] ?? '';
     $senhaConfirma = $_POST['senhaConfirma'] ?? '';
     if(!$nome || !$email || !$senha || !$senhaConfirma){
-        header('Location: loginPage.php?erro=entradasErro&opcao=Cadastrar-se');
+        header('Location: ../../public/pages/loginPage.php?erro=entradasErro&opcao=Cadastrar-se');
         exit;
     } else {
         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            header('Location: loginPage.php?erro=emailInvalido&opcao=Cadastrar-se');
+            header('Location: ../../public/pages/loginPage.php?erro=emailInvalido&opcao=Cadastrar-se');
+            exit;
+        }
+        if(strlen($senha) < 8){
+            header('Location: ../../public/pages/loginPage.php?erro=senhaPequena&opcao=Cadastrar-se');
             exit;
         }
         if($senha != $senhaConfirma){
-            header('Location: ../pages/loginPage.php?erro=senhasDiferentes&opcao=Cadastrar-se');
+            header('Location: ../../public/pages/loginPage.php?erro=senhasDiferentes&opcao=Cadastrar-se');
             exit;
         } else {
             $obUsuario = new Usuario($nome, $email, $senha);
@@ -26,10 +30,10 @@
             if($cadastro){
                 $_SESSION['nome'] = $obUsuario->nome;
                 $_SESSION['curso'] = $obUsuario->curso;
-                header('Location: ../pages/mainPage.php');
+                header('Location: ../../public/pages/mainPage.php');
                 exit;
             } else {
-                header('Location: ../pages/loginPage.php?erro=emailExistente&opcao=Cadastrar-se');
+                header('Location: ../../public/pages/loginPage.php?erro=emailExistente&opcao=Cadastrar-se');
                 exit;
             }
         }
