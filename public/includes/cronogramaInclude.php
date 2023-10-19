@@ -1,0 +1,42 @@
+<section id="container">
+    <h2>Cronograma de Estudo</h2>
+
+    <?php 
+        $erro = $_GET['erro'] ?? '';
+        $mensagemErro = $erro == 'dataInadequada' ? 'As datas inseridas estão inadequadas!' : '';
+        $aulas = explode(',',$_SESSION['aulas']);
+        if($_SESSION['curso']){ ?>
+        <p>Estude seguindo o seu cronograma de estudos ou por aulas da sua escolha.</p>
+
+        <section>
+            <?php foreach($aulas as $aula){ ?>
+                <a href="../pages/aulaPage.php?aula=<?=$aula?>">Aula <?=$aula?></a>
+            <?php } ?>
+        </section>
+    <?php } else {?>
+        <p>Crie um cronograma de estudo para começar sua preparação para os vestibulares!</p>
+        <form action="../../src/controllers/checagemCronograma.php" method="post" id="formCronograma">
+            <div>
+                <label for="cursoSelect">Qual é a área do curso que deseja prestar?</label>
+                <select name="curso" id="cursoSelect">
+                    <option value="linguagens">Linguagens</option>
+                    <option value="exatas">Exatas</option>
+                    <option value="humanas">Humanas</option>
+                    <option value="biologicas">Biológicas</option>
+                </select>
+            </div>
+            <div>
+                <label for="dataInicial">Qual a data de início dos seus estudos?</label>
+                <input type="date" name="dataInicial" id="dataInicial" class="datas" required>
+            </div>
+            <div>
+                <label for="dataFinal">Qual a data de término dos seus estudos?</label>
+                <input type="date" name="dataFinal" id="dataFinal" class="datas" required>
+            </div>
+            <div>
+                <p style="color: rgb(255, 0, 0);"><?=$mensagemErro?></p>
+            </div>
+            <input type="submit" value="Criar" id="criar">
+        </form>
+    <?php } ?>
+</section>

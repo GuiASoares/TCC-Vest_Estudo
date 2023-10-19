@@ -88,7 +88,7 @@
         // @param string $where
         // @param array $values [ field => value ]
         // return boolean
-        public function update($where, $values){
+        public function update($where, $values = []){
             // DADOS DA QUERY
             $fields = array_keys($values);
 

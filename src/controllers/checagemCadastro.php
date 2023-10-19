@@ -25,11 +25,12 @@
             header('Location: ../../public/pages/loginPage.php?erro=senhasDiferentes&opcao=Cadastrar-se');
             exit;
         } else {
-            $obUsuario = new Usuario($nome, $email, $senha);
-            $cadastro = $obUsuario->cadastrar();
+            $usuario = new Usuario($nome, $email, $senha);
+            $cadastro = $usuario->cadastrar();
             if($cadastro){
-                $_SESSION['nome'] = $obUsuario->nome;
-                $_SESSION['curso'] = $obUsuario->curso;
+                $_SESSION['nome'] = $usuario->nome;
+                $_SESSION['email'] = $usuario->email;
+                $_SESSION['curso'] = $usuario->curso;
                 header('Location: ../../public/pages/mainPage.php');
                 exit;
             } else {

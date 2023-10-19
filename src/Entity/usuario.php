@@ -4,9 +4,6 @@
 use Exception;
 use Src\DB\Database;
 
-use function PHPSTORM_META\elementType;
-use function PHPSTORM_META\type;
-
     class Usuario {
 
         public $nome;
@@ -19,10 +16,20 @@ use function PHPSTORM_META\type;
 
         public $curso;
 
-        public function __construct($nome = '', $email = '', $senha = ''){
+        public $dataInicial;
+
+        public $dataFinal;
+
+        public $semanasEstudo;
+
+        public function __construct($nome = '', $email = '', $senha = '', $curso = '', $dataInicial = '', $dataFinal = '', $semanasEstudo = ''){
             $this->nome = $nome;
             $this->email = $email;
             $this->senha = $senha;
+            $this->curso = $curso;
+            $this->dataInicial = $dataInicial;
+            $this->dataFinal = $dataFinal;
+            $this->semanasEstudo = $semanasEstudo;
         }
 
         public function cadastrar(){
@@ -57,5 +64,12 @@ use function PHPSTORM_META\type;
             } else {
                 return false;
             }
+        }
+
+        public function atualizarCurso(){
+            $database = new Database('usuarios');
+
+            $atualizado = $database->update('email="'.$this->email.'"', ['curso' => $this->curso, 'dataInicial' => $this->dataInicial, 'dataFinal' => $this->dataFinal, 'semanasEstudo' => $this->semanasEstudo]);
+            return $atualizado;
         }
     }
