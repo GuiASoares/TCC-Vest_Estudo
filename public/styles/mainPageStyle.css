@@ -347,3 +347,48 @@ a {
 #criar:hover {
     filter: brightness(0.7);
 }
+
+#listaAulas {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#listaAulas a {
+    font-size: 1.1em;
+    font-weight: normal;
+    transition: all ease 0.3s;
+}
+
+#listaAulas p {
+    font-size: 1.1em;
+    font-weight: normal;
+    transition: all ease 0.3s;
+}
+
+#listaAulas a:hover {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+}
+
+#listaAulas div {
+    display: flex;
+    gap: 10px;
+}
+
+#listaAulas button {
+    background-color: rgba(0, 255, 0, 0.3);
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#listaAulas button:hover {
+    filter: brightness(0.7);
+}
+
+#listaAulas button a:hover {
+    color: #000;
+    text-decoration: none;
+}

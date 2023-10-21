@@ -4,5 +4,8 @@
         "psr-4": {
             "Src\\":"src/"
         }
+    },
+    "require": {
+        "dompdf/dompdf": "^2.0"
     }
 }

@@ -13,7 +13,8 @@
         <?php } else {?>
         <p>Estude seguindo o seu cronograma de estudos ou por aulas da sua escolha.</p>
 
-        <section>
+        <section id="listaAulas">
+            <h2>Semana <?=($semanasConcluidas + 1)?></h2>
             <?php
             for($i = ($semanasConcluidas * $aulasSemana); $i < ($aulasSemana + $aulasSemana * $semanasConcluidas); $i++){
                 if($i < count($aulas)){ 
@@ -21,10 +22,10 @@
                 $aula->consultar();
                 ?>
                 <?php if(in_array($aulas[$i], $aulasConcluidas)){?>
-                    <p><?=$aula->nome?> <?=$aulas[$i]?> - Concluída</p>
+                    <p><?=$aula->nome?> - Concluída</p>
                 <?php } else {?>
-                <div style="display: flex;">
-                    <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"><?=$aula->nome?> <?=$aulas[$i]?></a>
+                <div>
+                    <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"><?=$aula->nome?></a>
                     <button><a href="../../src/controllers/concluirAula.php?id=<?=$aulas[$i]?>">Concluir</a></button>
                 </div>
             <?php }}}}?>
