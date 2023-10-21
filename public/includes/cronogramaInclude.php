@@ -4,14 +4,30 @@
     <?php 
         $erro = $_GET['erro'] ?? '';
         $mensagemErro = $erro == 'dataInadequada' ? 'As datas inseridas estão inadequadas!' : '';
+        if(isset($_SESSION['curso'], $_SESSION['aulas'])){
+        include('../../src/controllers/checagemCronogramaUsuario.php');
         $aulas = explode(',',$_SESSION['aulas']);
-        if($_SESSION['curso']){ ?>
+            if(count($aulasConcluidas) - 1 == count($aulas)){
+    ?>
+        <p>Você concluiu seu cronograma de estudo, veja nossos materiais de estudo para revisar as matérias.</p>
+        <?php } else {?>
         <p>Estude seguindo o seu cronograma de estudos ou por aulas da sua escolha.</p>
 
         <section>
-            <?php foreach($aulas as $aula){ ?>
-                <a href="../pages/aulaPage.php?aula=<?=$aula?>">Aula <?=$aula?></a>
-            <?php } ?>
+            <?php
+            for($i = ($semanasConcluidas * $aulasSemana); $i < ($aulasSemana + $aulasSemana * $semanasConcluidas); $i++){
+                if($i < count($aulas)){ 
+                $aula->__construct($aulas[$i]);
+                $aula->consultar();
+                ?>
+                <?php if(in_array($aulas[$i], $aulasConcluidas)){?>
+                    <p><?=$aula->nome?> <?=$aulas[$i]?> - Concluída</p>
+                <?php } else {?>
+                <div style="display: flex;">
+                    <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"><?=$aula->nome?> <?=$aulas[$i]?></a>
+                    <button><a href="../../src/controllers/concluirAula.php?id=<?=$aulas[$i]?>">Concluir</a></button>
+                </div>
+            <?php }}}}?>
         </section>
     <?php } else {?>
         <p>Crie um cronograma de estudo para começar sua preparação para os vestibulares!</p>

@@ -1,12 +1,13 @@
-<?php
+<?php 
     session_start();
 
     require('../../vendor/autoload.php');
 
     use Src\Entity\Aula;
+    use Src\Entity\CronogramaUsuario;
 
-    if(!isset($_GET['aula'])){
-        header('Location: ../../public/pages/mainPage.php?opcao=cronogramaInclude');
+    if(!isset($_GET['aula']) || !isset($_SESSION['email'])){
+        header('Location: ?opcao=cronogramaInclude');
         exit;
     }
 
