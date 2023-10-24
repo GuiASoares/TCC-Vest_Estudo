@@ -266,7 +266,7 @@ a {
 #container {
     font-size: 1.3em;
     width: 60%;
-    height: 65%;
+    min-height: 65%;
     background-color: #e0e0e0;
     margin: 50px;
     padding: 20px;

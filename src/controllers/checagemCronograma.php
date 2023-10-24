@@ -12,7 +12,7 @@
     $curso = $_POST['curso'];
     $data = new DateTime(date('Y-m-d'));
     $dataDiff = date_interval_format(date_diff(new DateTime($dataInicial), new DateTime($dataFinal)), '%R%a');
-    $dataAtualDiff = date_interval_format(date_diff($data, new DateTime($dataInicial)), '%R%a');
+    $dataAtualDiff = date_interval_format(date_diff($data, new DateTime($dataInicial)), '%R%a') + 1;
     $semanasEstudo = ($dataDiff % 7) == 0 ? (int) ($dataDiff / 7) : (int) ($dataDiff / 7 + 1);
 
     if($dataDiff <= 0 || $dataAtualDiff < 0){
