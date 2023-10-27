@@ -25,7 +25,7 @@
                     <p><?=$aula->nome?> - Concluída</p>
                 <?php } else {?>
                 <div>
-                    <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"><?=$aula->nome?></a>
+                    <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"  onclick="loading()"><?=$aula->nome?></a>
                     <button><a href="../../src/controllers/concluirAula.php?id=<?=$aulas[$i]?>">Concluir</a></button>
                 </div>
             <?php }}}}?>
@@ -57,3 +57,6 @@
         </form>
     <?php } ?>
 </section>
+<div id="loadingDiv" style="display: none;">
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div>

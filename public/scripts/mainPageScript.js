@@ -27,3 +27,7 @@ function userMenuClicked() {
         userMenu.style.display = "none";
     }
 }
+
+function loading(){
+    document.getElementById('loadingDiv').style.display = "flex";
+}

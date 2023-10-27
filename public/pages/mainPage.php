@@ -25,6 +25,7 @@ $opcao = $_GET['opcao'] ?? 'principal';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="imagex/png" href="../imgs/logoVestEstudo.png">
     <link rel="stylesheet" href="../styles/mainPageStyle.css">
+    <link rel="stylesheet" href="../styles/loading.css">
     <title>Página Principal</title>
 </head>
 
