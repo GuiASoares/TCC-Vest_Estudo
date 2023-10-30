@@ -28,9 +28,9 @@
                     <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"  onclick="loading()"><?=$aula->nome?></a>
                     <button><a href="../../src/controllers/concluirAula.php?id=<?=$aulas[$i]?>">Concluir</a></button>
                 </div>
-            <?php }}}}?>
-        </section>
-    <?php } else {?>
+                <?php }}}}?>
+            </section>
+            <?php } else {?>
         <p>Crie um cronograma de estudo para começar sua preparação para os vestibulares!</p>
         <form action="../../src/controllers/checagemCronograma.php" method="post" id="formCronograma">
             <div>
@@ -56,6 +56,7 @@
             <input type="submit" value="Criar" id="criar">
         </form>
     <?php } ?>
+    <p id="erroCarregarAula" style="color: rgb(255, 0, 0); display: none;">Erro ao carregar aula!</p>
 </section>
 <div id="loadingDiv" style="display: none;">
     <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>

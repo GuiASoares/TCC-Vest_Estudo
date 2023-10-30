@@ -29,5 +29,9 @@ function userMenuClicked() {
 }
 
 function loading(){
-    document.getElementById('loadingDiv').style.display = "flex";
+    document.getElementById('loadingDiv').style.display = "flex";  
+    setTimeout(()=>{
+        document.getElementById('loadingDiv').style.display = "none";
+        document.getElementById('erroCarregarAula').style.display = "block";
+    }, 10000);
 }
