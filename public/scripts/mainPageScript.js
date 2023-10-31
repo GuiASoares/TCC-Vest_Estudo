@@ -31,7 +31,8 @@ function userMenuClicked() {
 function loading(){
     document.getElementById('loadingDiv').style.display = "flex";  
     setTimeout(()=>{
+        window.stop();
         document.getElementById('loadingDiv').style.display = "none";
         document.getElementById('erroCarregarAula').style.display = "block";
-    }, 10000);
+    }, 15000);
 }

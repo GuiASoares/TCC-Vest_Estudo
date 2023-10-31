@@ -267,6 +267,7 @@ a {
     font-size: 1.3em;
     width: 60%;
     min-height: 65%;
+    max-height: 65%;
     background-color: #e0e0e0;
     margin: 50px;
     padding: 20px;
@@ -407,8 +408,10 @@ a {
 
 #container article {
     display: flex;
+    max-height: 100%;
     justify-content: center;
     flex-wrap: wrap;
+    overflow-y: auto;
 }
 
 #container article div {
@@ -420,4 +423,16 @@ a {
     .materia{
         font-size: 0.8em;
     }
+}
+
+#container section {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#container section h1 {
+    width: 80%;
+    position: absolute;
+    text-align: center;
 }

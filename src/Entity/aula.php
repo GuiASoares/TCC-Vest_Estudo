@@ -12,8 +12,9 @@
 
         public $conteudo;
 
-        public function __construct($id = ''){
+        public function __construct($id = '', $materia = ''){
             $this->id = $id;
+            $this->materia = $materia;
         }
 
         public function consultar(){
@@ -24,5 +25,11 @@
             $this->nome = $consulta->nome;
             $this->materia = $consulta->materia;
             $this->conteudo = $consulta->conteudo;
+        }
+
+        public function consultarMateria(){
+            $database = new Database('aulas');
+
+            return $database->select('materia="' .$this->materia. '"', '', '', 'id, nome')->fetchAll();
         }
     }
