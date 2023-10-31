@@ -3,6 +3,7 @@ const userMenu = document.getElementById("userMenu");
 const menuOpen = document.getElementById("menuOpen");
 const menuClose = document.getElementById("menuClose");
 const itemsText = document.getElementsByClassName("itemsText");
+const dropdown = document.querySelectorAll('.dropdown');
 
 function menuClicked() {
     if (menu.style.animationName == "menuOpen") {
@@ -20,13 +21,17 @@ function menuClicked() {
     }
 }
 
-function userMenuClicked() {
-    if (userMenu.style.display == "none"){
+window.addEventListener('click', (e) => {
+    const { baseVal: classTarget } = e.target.className
+
+    if(userMenu.style.display == "none" && classTarget === 'dropdown'){
         userMenu.style.display = "block";
     } else {
         userMenu.style.display = "none";
     }
-}
+
+})
+
 
 function loading(){
     document.getElementById('loadingDiv').style.display = "flex";  
@@ -34,5 +39,5 @@ function loading(){
         window.stop();
         document.getElementById('loadingDiv').style.display = "none";
         document.getElementById('erroCarregarAula').style.display = "block";
-    }, 15000);
+    }, 30000);
 }

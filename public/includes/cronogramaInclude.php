@@ -13,7 +13,7 @@
         <?php } else {?>
         <p>Estude seguindo o seu cronograma de estudos ou por aulas da sua escolha.</p>
 
-        <section id="listaAulas">
+        <ul id="listaAulas">
             <h2>Semana <?=($semanasConcluidas + 1)?></h2>
             <?php
             for($i = ($semanasConcluidas * $aulasSemana); $i < ($aulasSemana + $aulasSemana * $semanasConcluidas); $i++){
@@ -24,12 +24,18 @@
                 <?php if(in_array($aulas[$i], $aulasConcluidas)){?>
                     <p><?=$aula->nome?> - Concluída</p>
                 <?php } else {?>
-                <div>
-                    <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"  onclick="loading()"><?=$aula->nome?></a>
-                    <button><a href="../../src/controllers/concluirAula.php?id=<?=$aulas[$i]?>">Concluir</a></button>
-                </div>
+                    
+                    <li>
+                        <div>
+                            <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"  onclick="loading()"><?=$aula->nome?></a>
+                            <button>
+                                <a href="../../src/controllers/concluirAula.php?id=<?=$aulas[$i]?>">Concluir</a>
+                            </button>
+                        </div>
+                    </li>
+
                 <?php }}}}?>
-            </section>
+            </ul>
             <?php } else {?>
         <p>Crie um cronograma de estudo para começar sua preparação para os vestibulares!</p>
         <form action="../../src/controllers/checagemCronograma.php" method="post" id="formCronograma">
