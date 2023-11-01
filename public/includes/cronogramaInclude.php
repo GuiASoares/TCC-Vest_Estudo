@@ -49,6 +49,14 @@
                 </select>
             </div>
             <div>
+                <label for="universidadeSelect">Qual universidade deseja?</label>
+                <select name="universidade" id="universidadeSelect">
+                    <option value="Unesp">Unesp</option>
+                    <option value="USP">USP</option>
+                    <option value="Unicamp">Unicamp</option>
+                </select>
+            </div>
+            <div>
                 <label for="dataInicial">Qual a data de início dos seus estudos?</label>
                 <input type="date" name="dataInicial" id="dataInicial" class="datas" required>
             </div>

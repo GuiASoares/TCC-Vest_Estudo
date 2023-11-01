@@ -9,7 +9,7 @@
 
     $dataInicial = $_POST['dataInicial'];
     $dataFinal = $_POST['dataFinal'];
-    $curso = $_POST['curso'];
+    $curso = $_POST['curso'] . $_POST['universidade'];
     $data = new DateTime(date('Y-m-d'));
     $dataDiff = date_interval_format(date_diff(new DateTime($dataInicial), new DateTime($dataFinal)), '%R%a');
     $dataAtualDiff = date_interval_format(date_diff($data, new DateTime($dataInicial)), '%R%a') + 1;

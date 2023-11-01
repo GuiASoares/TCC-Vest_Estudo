@@ -22,9 +22,9 @@ function menuClicked() {
 }
 
 window.addEventListener('click', (e) => {
-    const { baseVal: classTarget } = e.target.className
+    const { baseVal: classTarget } = e.target.className;
 
-    if(userMenu.style.display == "none" && classTarget === 'dropdown'){
+    if(userMenu.style.display !== "block" && classTarget === 'dropdown'){
         userMenu.style.display = "block";
     } else {
         userMenu.style.display = "none";
