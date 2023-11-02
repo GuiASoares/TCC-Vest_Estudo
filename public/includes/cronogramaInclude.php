@@ -22,7 +22,7 @@
                 $aula->consultar();
                 ?>
                 <?php if(in_array($aulas[$i], $aulasConcluidas)){?>
-                    <p><?=$aula->nome?> - Concluída</p>
+                    <li><p><?=$aula->nome?> - Concluída</p></li>
                 <?php } else {?>
                     
                     <li>

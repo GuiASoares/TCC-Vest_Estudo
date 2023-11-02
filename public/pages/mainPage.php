@@ -31,7 +31,7 @@ $opcao = $_GET['opcao'] ?? 'principal';
 
 <body>
     <header>
-        <img src="../imgs/logoVestEstudo.png" alt="Vest Estudo" class="logoVestEstudo">
+        <a href="index.php" class="logoVestEstudo"><img src="../imgs/logoVestEstudo.png" alt="Vest Estudo" ></a>
         <h1>Vest Estudo</h1>
         <section>
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" class="dropdown" viewBox="0 0 448 512">

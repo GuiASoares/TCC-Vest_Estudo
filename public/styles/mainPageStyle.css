@@ -42,6 +42,11 @@ header {
 .logoVestEstudo {
     height: 100%;
     margin-left: 20px;
+    z-index: 1;
+}
+
+.logoVestEstudo img {
+    height: 100%;
 }
 
 header h1{
