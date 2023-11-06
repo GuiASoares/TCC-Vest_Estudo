@@ -1,5 +1,5 @@
 <section id="container">
-    <h2>Bem-vindo à Página do Usuário!</h2>
+    <h2>Bem-vindo <?=$_SESSION['nome']?>!</h2>
 
     <?php if($_SESSION['curso']){ ?>
         <p>Estude seguindo o seu cronograma de estudos ou por aulas da sua escolha.</p>
