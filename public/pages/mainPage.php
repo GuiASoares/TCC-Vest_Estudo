@@ -86,7 +86,10 @@ $opcao = $_GET['opcao'] ?? 'principal';
                 </a>
             </div>
         </section>
-        <?php include('../includes/'.$opcao.'.php'); ?>
+
+        <?php
+            require('../includes/'.$opcao.'.php');
+        ?>
 
     </main>
     <section id="confirmacaoLogout" style="<?=$opcoesDesconectar?>">

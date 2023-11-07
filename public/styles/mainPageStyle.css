@@ -500,3 +500,13 @@ a {
 .buttonMainOptions:hover {
     filter: brightness(0.7);
 }
+
+.questoesFaculdades {
+    width: 35%;
+    justify-content: center;
+    transition: all ease 0.5s;
+}
+
+.questoesFaculdades:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
