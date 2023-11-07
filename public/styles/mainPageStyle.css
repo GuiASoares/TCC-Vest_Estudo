@@ -405,6 +405,7 @@ a {
     border-radius: 10px;
     padding: 5px;
     margin-top: 10px;
+    transition: all ease 0.3s;
 }
 
 .materia:hover{
