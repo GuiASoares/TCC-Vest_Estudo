@@ -4,26 +4,19 @@
     use Src\DB\Database;
 
     class Questao{
-        public $id;
-
         public $materia;
 
         public $faculdade;
 
-        public function __construct($id = '', $materia = '', $faculdade = ''){
-            $this->id = $id;
+        public function __construct($materia = '', $faculdade = ''){
             $this->materia = $materia;
             $this->faculdade = $faculdade;
         }
 
         public function consultarQuestoes(){
-            $id = $this->id != '' ? "id=".$this->id : '';
-            $materia = $this->materia != '' ? "materia='".$this->materia."'" : '';
-            $faculdade = $this->faculdade != '' ? "faculdade='".$this->faculdade."'" : '';
-            $where = $id ? [$id] : [$materia, $faculdade];
             $database = new Database('questoes');
             
-            $consulta = $database->select(implode(' AND ', $where))->fetchAll();
+            $consulta = $database->select('materia="'.$this->materia.'" AND faculdade="'.$this->faculdade.'"')->fetchAll();
 
             return $consulta;
         }

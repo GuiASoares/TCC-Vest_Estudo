@@ -5,21 +5,18 @@
     use Dompdf\Dompdf;
     use Dompdf\Options;
 
-    if(isset($_GET['materia'], $_GET['titulo'], $_GET['faculdade'])){
+    if(isset($_GET['materia'], $_GET['faculdade'])){
         $materia = $_GET['materia'];
-        $titulo = $_GET['titulo'];
         $faculdade = $_GET['faculdade'];
     
-        $questao = new Questao('', $materia, $faculdade);
+        $questao = new Questao($materia, $faculdade);
         
         $questoes = $questao->consultarQuestoes();
 
-    } else if(isset($_GET['questao'])){
-        $id = $_GET['questao'];
-
-        $questao = new Questao($id);
-
-        $questoes = $questao->consultarQuestoes();
+        if(!$questoes){
+            echo "<script>javascript:history.go(-1)</script>";
+            exit;
+        }
 
         $options = new Options();
         $options->setChroot(__DIR__);
