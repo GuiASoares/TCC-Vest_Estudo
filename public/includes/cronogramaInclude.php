@@ -22,12 +22,12 @@
                 $aula->consultar();
                 ?>
                 <?php if(in_array($aulas[$i], $aulasConcluidas)){?>
-                    <li><p><?=$aula->nome?> - Concluída</p></li>
+                    <li><p><?=utf8_encode($aula->nome)?> - Concluída</p></li>
                 <?php } else {?>
                     
                     <li>
                         <div>
-                            <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"  onclick="loading()"><?=$aula->nome?></a>
+                            <a href="../pages/aulaPage.php?aula=<?=$aulas[$i]?>"  onclick="loading()"><?=utf8_encode($aula->nome)?></a>
                             <button>
                                 <a href="../../src/controllers/concluirAula.php?id=<?=$aulas[$i]?>">Concluir</a>
                             </button>

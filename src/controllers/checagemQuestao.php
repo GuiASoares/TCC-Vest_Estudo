@@ -23,8 +23,8 @@
         $options->setIsRemoteEnabled(true);
 
         $dompdf = new Dompdf($options);
-        $dompdf->loadHtml($questoes[0]['conteudo']);
-        $dompdf->addInfo('Title', $questoes[0]['nome']);
+        $dompdf->loadHtml(utf8_encode($questoes[0]['conteudo']));
+        $dompdf->addInfo('Title', utf8_encode($questoes[0]['nome']));
         $dompdf->render();
         header('Content-type: application/pdf; charset=UTF-8');
         echo $dompdf->output();

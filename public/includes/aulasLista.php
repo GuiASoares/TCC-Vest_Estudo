@@ -8,7 +8,7 @@
     </section>
     <ul id="listaAulas">
         <?php foreach($aulas as $aula){ ?>
-            <li><a href="../pages/aulaPage.php?aula=<?=$aula['id']?>" style="width: max-content;" onclick="loading()"><?=$aula['nome']?></a></li>
+            <li><a href="../pages/aulaPage.php?aula=<?=$aula['id']?>" style="width: max-content;" onclick="loading()"><?=utf8_encode($aula['nome'])?></a></li>
         <?php } ?>
     </ul>
     <p id="erroCarregarAula" style="color: rgb(255, 0, 0); display: none;">Erro ao carregar aula!</p>

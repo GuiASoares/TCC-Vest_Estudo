@@ -39,5 +39,5 @@ function loading(){
         window.stop();
         document.getElementById('loadingDiv').style.display = "none";
         document.getElementById('erroCarregarAula').style.display = "block";
-    }, 30000);
+    }, 60000);
 }

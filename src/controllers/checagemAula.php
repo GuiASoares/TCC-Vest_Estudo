@@ -23,8 +23,8 @@
     $options->setIsRemoteEnabled(true);
 
     $dompdf = new Dompdf($options);
-    $dompdf->loadHtml($aula->conteudo);
-    $dompdf->addInfo('Title', $aula->nome);
+    $dompdf->loadHtml(utf8_encode($aula->conteudo));
+    $dompdf->addInfo('Title', utf8_encode($aula->nome));
     $dompdf->render();
     header('Content-type: application/pdf; charset=UTF-8');
     echo $dompdf->output();
